@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+ <title>sy12-2</title>
+ <style>
+	 *{
+		 margin:0;
+		 padding:0;
+	 }
+	 #container{
+		 position: relative;
+		 height:400px;
+		 width:600px;
+		 margin:50px auto;
+		 border:1px solid black;
+	 }
+	 .nav {
+		 width:100%;
+		 height:50px;
+		 position:absolute
+		 top:0;
+		 left:0;
+		 
+	 }
+	 .nav li{
+		 list-style: none;
+		 float:left;
+		 color:white;
+		 font-size: 30px;
+		 background-color: black;
+		 width:200px;
+		 text-align: center;
+	 }
+	 .content{
+		 position: absolute;
+		 width:500px;
+		 height:300px;
+		 left:50px;
+		 top:50px;
+	 }
+	 .content p{
+		 border-bottom:1px dotted black;
+		 height:50px;
+		 padding-bottom: 1px;
+		 font-size: 30px;
+	 }
+ </style>
+ 
+ 
+ </head>
+<body>
+	<div id='container'>
+		
+		
+	<ul class='nav'>
+		<li>第一项</li>
+		<li>第二项</li>
+		<li>第三项</li>
+	</ul>	
+		
+	<div class='content'>
+		<p>g1</p>
+		<p>g2</p>
+		<p>g3</p>
+		<p>g4</p>
+		<p>g5</p>
+		<p>g6</p>
+		
+		
+	</div>
+	</div>
+	
+	
+  <script>
+	  let titles=document.getElementsByTagName('li'),
+	      contents=document.getElementsByTagName('p');
+		  
+	  titles[0].onmouseenter=function(){
+		  this.style.cursor='pointer';
+		  this.style.backgroundColor='white';
+		  this.style.color='black';
+		  for(let i=0;i<contents.length;i++){
+			  contents[i].innerHTML='g'+i;
+		  }
+	  }
+	  
+	  titles[1].onmouseenter=function(){
+		  this.style.cursor='pointer';
+		  this.style.backgroundColor='white';
+		  this.style.color='black';
+	  		  for(let i=0;i<contents.length;i++){
+	  			  contents[i].innerHTML='c'+i;
+	  		  }
+	  }
+	  titles[2].onmouseenter=function(){
+		  this.style.cursor='pointer';
+		  this.style.backgroundColor='white';
+		  this.style.color='black';
+	  		  for(let i=0;i<contents.length;i++){
+	  			  contents[i].innerHTML='b'+i;
+	  		  }
+	  }
+	  for(let j=0;j<3;j++){
+		  titles[j].onmouseleave=function(){
+		  		  this.style.backgroundColor='black';
+		  		  this.style.color='white';
+		  }
+	  }
+  </script>
+ </body>
+</html>

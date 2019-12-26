@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>sy12-3</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		ul{
+			margin:50px 50px;
+		}
+		li{
+			list-style-type: none;
+			width:20px;
+			height:20px;
+			float:left;
+			background: url('images/star.png') no-repeat;
+			cursor: pointer;
+		}
+		.on{
+			background: url('images/star.png') 0 -27px no-repeat;
+		}
+	</style>
+		
+		
+		
+	</head>
+	<body>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<script>
+			let lists=document.getElementsByTagName('li');
+			for(let i=0;i<lists.length;i++){
+				lists[i].onmouseenter=function(){
+					for(let j=0;j<=i;j++){
+						lists[j].className='on';
+					}
+				}
+				lists[i].onmouseleave=function(){
+					for(let j=0;j<=i;j++){
+						lists[j].className='';
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
